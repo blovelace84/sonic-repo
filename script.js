@@ -45,6 +45,8 @@ updateProgressBar('green-hill', 'progress-bar-green-hill');
 updateProgressBar('marble-zone', 'progress-bar-marble-zone');
 updateProgressBar('open-heart', 'progress-bar-open-heart');
 updateProgressBar('emerald-coast', 'progress-bar-emerald-coast');
+updateProgressBar('sonic-boom', 'progress-bar-sonic-boom');
+updateProgressBar('open-theme', 'progress-bar-open-theme');
 
 
 //Add to Playlists

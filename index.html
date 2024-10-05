@@ -81,35 +81,38 @@
         </li>
     </ul>
 
-<div class="album">
-    <h2>Sonic CD (1993)</h2>
-    <ul class="track-list">
-        <li>
-            Sonic Boom
+    <div class="album">
+        <h2>Sonic CD (1993)</h2>
+        <ul class="track-list">
+            <li>
+                Sonic Boom 
                 <button class="play-btn" onclick="playTrack('sonic-boom')">Play</button>
     
-                <audio id="sonic-boom" src="Music/us_sonic_boom_(short_version).mp3" controls></audio>
-                <button class="add-to-playlist-btn" onclick="addToPlaylist('sonic-boom')">Add to Playlist</button>
     
-                <div class="progress-container">
-                    <div id="progress-bar-emerald-coast" class="progress-bar"></div>
-                </div>  
-        </li>
-        <li>
-            Opening Theme 
-                <button class="play-btn" onclick="playTrack(open-theme)">Play</button>
-                <audio id="open-theme" src="Music/us_opening_theme.mp3" controls></audio>
-                <button class="add-to-playlist-btn" onclick="addToPlaylist('open-theme')">Add to Playlist</button>
-
-                <div class="progress-container">
-                    <div id="progress-bar-emerald-coast" class="progress-bar"></div>
-                </div>    
-        </li>
-    </ul>
+                <!-- Green Hill Zone -->
+        <audio id="sonic-boom" src="Music/us_sonic_boom_(short_version).mp3" controls></audio>
     
-        
+        <!--Add to Playlist button-->
+        <button class="add-to-playlist-btn" onlclick="addToPlaylist('sonic-boom')">Add to Playlist</button>
+    
+        <!--Progress Bar-->
+        <div class="progress-container">
+            <div id="progress-bar-sonic-booml" class="progress-bar"></div>
+        </div>
+            </li>
+            <li>
+                Opening Theme  
+                <button class="play-btn" onclick="playTrack('marble-zone')">Play</button>
+                <!-- Marble Zone -->
+        <audio id="open-theme" src="Music/us_opening_theme.mp3" controls></audio>
+    
+        <button class="add-to-playlist-btn" onlclick="addToPlaylist(green-hill)">Add to Playlist</button>
+        <div class="progress-container">
+            <div id="progress-bar-marble-zone" class="progress-bar"></div>
+        </div>
     </div>
-</div>
+            </li>
+        </ul>
 
 
 <!-- Link to the external JavaScript file -->
