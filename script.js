@@ -10,14 +10,18 @@ function searchTracks(){
     const searchInput = document.getElementById('searchBar').value.toLowerCase();
     const albums = document.querySelectorAll('.album');
     albums.forEach(album => {
-        const tracks = albums.querySelectorAll('li');
-        tracks.forEach(track =>{
+        const tracks = album.querySelectorAll('li');
+        let albumHasVisibleTracks = false;
+
+        tracks.forEach(track => {
             if(track.textContent.toLowerCase().includes(searchInput)){
-                track.style.display ='';
+                track.style.display = '';
+                albumHasVisibleTracks = true;
             }
             else{
                 track.style.display = 'none';
             }
         });
+        album.style.display = albumHasVisibleTracks ? '' : 'none';
     });
 }
