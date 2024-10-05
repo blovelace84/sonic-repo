@@ -1,0 +1,68 @@
+body{
+    background: rgb(227,221,14);
+background: linear-gradient(178deg, rgba(227,221,14,1) 0%, rgba(43,30,184,1) 97%);
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+    background-color: blueviolet;
+    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header{
+    background-color: yellowgreen;
+    padding: 20px;
+    text-align: center;
+}
+
+img{
+    border: 5px solid blue;
+    border-radius: 10px;
+}
+
+.container{
+    padding: 20px;
+}
+
+.album{
+    background-color: aqua;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+album h2{
+    margin-top: 0;
+}
+
+.track-list{
+    list-style: none;
+    padding: 0;
+}
+
+.track-list li{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.play-btn{
+    background-color: green;
+    border: none;
+    color: wheat;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.play-btn:hover{
+    background-color: yellowgreen;
+}
+
+audio{
+    width: 100%;
+    margin-top: 10px;
+}
