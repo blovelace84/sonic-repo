@@ -54,6 +54,7 @@ album h2{
     background-color: green;
     border: none;
     color: wheat;
+    margin: 0 auto;
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
