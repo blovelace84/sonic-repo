@@ -39,6 +39,17 @@
     <div class="progress-container">
         <div id="progress-bar-green-hill" class="progress-bar"></div>
     </div>
+
+    <!--Rating System-->
+
+    <div class="rating">
+        <span onclick="rateTrack('green-hill', 5)">★</span>
+        <span onclick="rateTrack('green-hill', 4)">★</span>
+        <span onclick="rateTrack('green-hill', 3)">★</span>
+        <span onclick="rateTrack('green-hill', 2)">★</span>
+        <span onclick="rateTrack('green-hill', 1)">★</span>
+    </div>
+    
         </li>
         <li>
             Marble Zone 
@@ -80,7 +91,7 @@
     </div>
         </li>
     </ul>
-
+</div>
     <div class="album">
         <h2>Sonic CD (1993)</h2>
         <ul class="track-list">
@@ -97,18 +108,18 @@
     
         <!--Progress Bar-->
         <div class="progress-container">
-            <div id="progress-bar-sonic-booml" class="progress-bar"></div>
+            <div id="progress-bar-sonic-boom" class="progress-bar"></div>
         </div>
             </li>
             <li>
                 Opening Theme  
-                <button class="play-btn" onclick="playTrack('marble-zone')">Play</button>
+                <button class="play-btn" onclick="playTrack('open-theme')">Play</button>
                 <!-- Marble Zone -->
         <audio id="open-theme" src="Music/us_opening_theme.mp3" controls></audio>
     
-        <button class="add-to-playlist-btn" onlclick="addToPlaylist(green-hill)">Add to Playlist</button>
+        <button class="add-to-playlist-btn" onlclick="addToPlaylist('open-theme')">Add to Playlist</button>
         <div class="progress-container">
-            <div id="progress-bar-marble-zone" class="progress-bar"></div>
+            <div id="progress-bar-open-theme" class="progress-bar"></div>
         </div>
     </div>
             </li>

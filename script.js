@@ -66,3 +66,17 @@ function loadPlaylist() {
     playlist = savedPlaylist;
     // Render the playlist
 }
+
+//Rating system code
+function rateTrack(trackId, rating) {
+    let ratings = JSON.parse(localStorage.getItem('ratings')) || {};
+    ratings[trackId] = rating;
+    localStorage.setItem('ratings', JSON.stringify(ratings));
+    alert('You rated this track ' + rating + ' stars!');
+}
+
+function displayRating(trackId) {
+    const ratings = JSON.parse(localStorage.getItem('ratings')) || {};
+    const rating = ratings[trackId] || 0;
+    // Display the rating on the UI
+}
