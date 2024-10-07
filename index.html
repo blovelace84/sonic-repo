@@ -3,128 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonic Playlist</title>
+    <title>Sonic Music Library</title>
     <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
-    <div class="search-container">
-        <input type="text" id="searchBar" placeholder="Search for tracks...">
-        <button onclick="searchTracks()">Search</button>
-    </div>
-
-    <h1>My Sonic Playlist</h1>
-    <img src="https://www.hollywoodreporter.com/wp-content/uploads/2017/07/sonic.jpg" alt="sonic and friends" width="400" height="300">
+    <img src="Pictures I need/sonic (1).webp" alt="Sonic" width="300" height="300">
+    <h1>Sonic Music Library</h1>
 </header>
-    <!-- Album: Sonic the Hedgehog (1991) -->
 
-
-<div class="album">
-    <h2>Sonic the Hedgehog (1991)</h2>
-    <ul class="track-list">
-        <li>
-            Green Hill Zone 
-            <button class="play-btn" onclick="playTrack('green-hill')">Play</button>
-
-
-            <!-- Green Hill Zone -->
-    <audio id="green-hill" src="Music/02-Green Hill Zone.mp3" controls></audio>
-
-    <!--Add to Playlist button-->
-    <button class="add-to-playlist-btn" onlclick="addToPlaylist(green-hill)">Add to Playlist</button>
-
-    <!--Progress Bar-->
-    <div class="progress-container">
-        <div id="progress-bar-green-hill" class="progress-bar"></div>
-    </div>
-
-    <!--Rating System-->
-
-    <div class="rating">
-        <span onclick="rateTrack('green-hill', 5)">★</span>
-        <span onclick="rateTrack('green-hill', 4)">★</span>
-        <span onclick="rateTrack('green-hill', 3)">★</span>
-        <span onclick="rateTrack('green-hill', 2)">★</span>
-        <span onclick="rateTrack('green-hill', 1)">★</span>
-    </div>
-    
-        </li>
-        <li>
-            Marble Zone 
-            <button class="play-btn" onclick="playTrack('marble-zone')">Play</button>
-            <!-- Marble Zone -->
-    <audio id="marble-zone" src="Music/03-Marble Zone.mp3" controls></audio>
-
-    <button class="add-to-playlist-btn" onlclick="addToPlaylist(green-hill)">Add to Playlist</button>
-    <div class="progress-container">
-        <div id="progress-bar-marble-zone" class="progress-bar"></div>
-    </div>
-</div>
-        </li>
-    </ul>
-
-<!-- Another Album (Sonic Adventure) -->
-<div class="album">
-    <h2>Sonic Adventure (1998)</h2>
-    <ul class="track-list">
-        <li>
-            Open Your Heart 
-            <button class="play-btn" onclick="playTrack('open-heart')">Play</button>
-            <!-- Open Your Heart -->
-    <audio id="open-heart" src="Music/06 Open Your Heart (MAIN THEME OF SONIC Adventure).mp3" controls></audio>
-    <button class="add-to-playlist-btn" onlclick="addToPlaylist(green-hill)">Add to Playlist</button>
-    <div class="progress-container">
-        <div id="progress-bar-open-heart" class="progress-bar"></div>
-    </div>
-        </li>
-        <li>
-            Emerald Coast 
-            <button class="play-btn" onclick="playTrack('emerald-coast')">Play</button>
-
-            <!-- Emerald Coast -->
-    <audio id="emerald-coast" src="Music/1-05 Azure Blue World for Emerald Coast.mp3" controls></audio>
-    <button class="add-to-playlist-btn" onlclick="addToPlaylist(green-hill)">Add to Playlist</button>
-    <div class="progress-container">
-        <div id="progress-bar-emerald-coast" class="progress-bar"></div>
-    </div>
-        </li>
-    </ul>
-</div>
+<div class="container">
+    <!-- Album 1: Sonic the Hedgehog -->
     <div class="album">
-        <h2>Sonic CD (1993)</h2>
+        <h2>Sonic the Hedgehog (1991)</h2>
         <ul class="track-list">
             <li>
-                Sonic Boom 
-                <button class="play-btn" onclick="playTrack('sonic-boom')">Play</button>
-    
-    
-                <!-- Green Hill Zone -->
-        <audio id="sonic-boom" src="Music/us_sonic_boom_(short_version).mp3" controls></audio>
-    
-        <!--Add to Playlist button-->
-        <button class="add-to-playlist-btn" onlclick="addToPlaylist('sonic-boom')">Add to Playlist</button>
-    
-        <!--Progress Bar-->
-        <div class="progress-container">
-            <div id="progress-bar-sonic-boom" class="progress-bar"></div>
-        </div>
+                Green Hill Zone
+                <button class="play-btn" onclick="playTrack('green-hill')">Play</button>
             </li>
             <li>
-                Opening Theme  
-                <button class="play-btn" onclick="playTrack('open-theme')">Play</button>
-                <!-- Marble Zone -->
-        <audio id="open-theme" src="Music/us_opening_theme.mp3" controls></audio>
-    
-        <button class="add-to-playlist-btn" onlclick="addToPlaylist('open-theme')">Add to Playlist</button>
-        <div class="progress-container">
-            <div id="progress-bar-open-theme" class="progress-bar"></div>
-        </div>
-    </div>
+                Marble Zone
+                <button class="play-btn" onclick="playTrack('marble-zone')">Play</button>
             </li>
         </ul>
+        <audio id="green-hill" src="music/green-hill-zone.mp3" controls></audio>
+        <audio id="marble-zone" src="music/marble-zone.mp3" controls></audio>
+    </div>
 
+    <!-- Album 2: Sonic Adventure -->
+    <div class="album">
+        <h2>Sonic Adventure (1998)</h2>
+        <ul class="track-list">
+            <li>
+                Open Your Heart
+                <button class="play-btn" onclick="playTrack('open-heart')">Play</button>
+            </li>
+            <li>
+                Emerald Coast
+                <button class="play-btn" onclick="playTrack('emerald-coast')">Play</button>
+            </li>
+        </ul>
+        <audio id="open-heart" src="music/open-your-heart.mp3" controls></audio>
+        <audio id="emerald-coast" src="music/emerald-coast.mp3" controls></audio>
+    </div>
+</div>
 
 <!-- Link to the external JavaScript file -->
 <script src="script.js"></script>

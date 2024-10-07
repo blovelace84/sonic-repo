@@ -1,26 +1,26 @@
 body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background: rgb(227,221,14);
 background: linear-gradient(178deg, rgba(227,221,14,1) 0%, rgba(43,30,184,1) 97%);
-    margin: 0;
-    padding: 0;
-}
-
-h1{
-    text-align: center;
-    background-color: blueviolet;
-    color: whitesmoke;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: white;
+margin: 0;
+padding: 0;
 }
 
 header{
-    background-color: yellowgreen;
+    background-color: green;
     padding: 20px;
     text-align: center;
 }
 
 img{
-    border: 5px solid blue;
-    border-radius: 10px;
+    border-radius: 20px;
+    border: 1px solid blue;
+}
+
+h1{
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .container{
@@ -29,26 +29,13 @@ img{
 
 .album{
     background-color: aqua;
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
     margin-bottom: 20px;
-    transition: box-shadow 0.3s ease;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto 20px;
-}
-
-.album:hover{
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
 }
 
 .album h2{
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 15px;
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    margin-top: 0;
 }
 
 .track-list{
@@ -59,73 +46,5 @@ img{
 .track-list li{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid black;
     margin-bottom: 10px;
-}
-
-.track-list li:last-child{
-    border-bottom: none;
-}
-
-.play-btn{
-    background-color: green;
-    border: none;
-    color: wheat;
-    margin: 0 auto;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.play-btn:hover{
-    background-color: yellowgreen;
-}
-
-audio{
-    width: 100%;
-    margin-top: 10px;
-}
-
-
-.search-container{
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-
-#searchBar{
-    padding: 10px;
-    width: 60%;
-    border: 1px solid blue;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-button{
-    padding: 10px 20px;
-    background-color: blue;
-    color: wheat;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover{
-    background-color: rgb(200, 78, 13);
-}
-
-.progress-container {
-    width: 100%;
-    background-color: #1c15dd;
-    border-radius: 5px;
-    height: 10px;
-}
-
-.progress-bar {
-    background-color: #0d6efd;
-    height: 10px;
-    width: 0;
-    border-radius: 5px;
 }
