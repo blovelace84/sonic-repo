@@ -38,11 +38,23 @@ const musicData = [
         image: "Pictures I need/emerald-coast.jpg"
     },
     {
-        title: "Sonic Cd Open Theme",
+        title: "Sonic Cd Opening Theme",
         album: "Sonic CD",
         src: "audio/us_opening_theme.mp3",
         image: "Pictures I need/sonic-cd.jpg"
-    }
+    },
+    {
+        title: "Sonic CD (Short Song Version)",
+        album: "Sonic CD",
+        src: "audio/us_sonic_boom_(short_version).mp3",
+        image: "Pictures I need/sonic-cd.jpg"
+    },
+    {
+        title: "Sonic Heroes Theme",
+        album: "Sonic Heroes",
+        src: "audio/01 SONIC HEROES.mp3",
+        image: "Pictures I need/sonic-heroes.jpg"
+    },
 ];
 
 //function to display the music collection
