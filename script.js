@@ -18,6 +18,30 @@ const musicData = [
         album: "Sonic Adventure 2 Battle",
         src: "audio/02.-Escape-From-The-City-.for-City-Escape.mp3",
         image: "Pictures I need/city_esacape.jpg"
+    },
+    {
+        title: "Marble Zone",
+        album: "Sonic the Hedgehog",
+        src: "audio/03-Marble Zone.mp3",
+        image: "Pictures I need/marble_zone.jpg"
+    },
+    {
+        title: "Open Your Heart",
+        album: "Sonic Adventure DX",
+        src: "audio/06 Open Your Heart (MAIN THEME OF SONIC Adventure).mp3",
+        image: "Pictures I need/sonic-adventure-dx.jpg"
+    },
+    {
+        title: "Emerald Coast",
+        album: "Sonic Adventure",
+        src: "audio/1-05 Azure Blue World for Emerald Coast.mp3",
+        image: "Pictures I need/emerald-coast.jpg"
+    },
+    {
+        title: "Sonic Cd Open Theme",
+        album: "Sonic CD",
+        src: "audio/us_opening_theme.mp3",
+        image: "Pictures I need/sonic-cd.jpg"
     }
 ];
 
