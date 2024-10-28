@@ -3,35 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonic Soundboard & Music Collection</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Sonic Sound Oasis</title>
 </head>
 <body>
     <header>
         <h1>Sonic Sound Oasis</h1>
+        <input type="text" placeholder="Search for tracks..." id="searchBar">
+
+        <img src="Pictures I need/sonic the hedgehog.png" alt="Sonic the hedgehog">
     </header>
-
-    <section id="soundboard">
-        <h2>Soundboard</h2>
-        <div class="sound-buttons">
-            <!-- Add buttons for each sound effect -->
-            <button onclick="playSound('ring')">Ring</button>
-            <button onclick="playSound('jump')">Jump</button>
-            <!-- Add more buttons as needed -->
-        </div>
-    </section>
-
-    <section id="music-collection">
-        <h2>Music Collection</h2>
-        <ul class="music-list">
-            <!-- Add list items for each track -->
-            <li onclick="playTrack('green-hill-zone')">Green Hill Zone</li>
-            <li onclick="playTrack('chemical-plant')">Chemical Plant Zone</li>
-            <!-- Add more tracks as needed -->
-        </ul>
-        <audio id="audio-player" controls></audio>
-    </section>
-
-    <script src="scripts.js"></script>
+    <main>
+        <section id="musicCollection">
+            <!--This is where my tracks will go-->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sonic Sound Oasis</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
