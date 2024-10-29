@@ -36,6 +36,10 @@ main{
     padding: 20px;
 }
 
+.track-container{
+    display: grid;
+}
+
 .track{
     background-color: aqua;
     border: 1px solid blue;
@@ -44,7 +48,6 @@ main{
     padding: 10px 20px;
     width: 400px;
     text-align: center;
-    box-sizing: border-box;
 }
 
 .thumbnail{
