@@ -160,6 +160,27 @@ function viewPlaylist(playlistName) {
     alert(`Playlist: ${playlistName}\nTracks:\n${trackTitles.join("\n")}`);
 }
 
+function selectPlaylist(playlistName){
+    currentPlaylistName = playlistName;
+    alert(`selected playlist: ${currentPlaylistName}`);
+}
+
+//displaying library for the playlist created
+function displayLibrary(){
+    const trackLibrary = document.getElementById("track-library");
+    trackLibrary.innerHTML = "";
+
+    tracks.forEach(track =>{
+        const trackDiv = document.createElement("div");
+        trackDiv.classList.add("track");
+        trackDiv.innerHTML = `
+        <p><strong>${track.title}</strong> -${track.album}</p>
+        <button onclick = "addToCurrentPlaylist(${track.id})">Add to Playlist</button>
+        `;
+        trackLibrary.appendChild(trackDiv);
+    });
+}
+
 // Add a track to the current playlist
 function addToCurrentPlaylist(trackId) {
     if (!currentPlaylistName) {
