@@ -13,6 +13,12 @@ const tracks = [
         audio: "audio/03-Marble Zone.mp3"
     },
     {
+        title: "Spring Yard Zone",
+        album: "Sonic the Hedgehog",
+        cover: "Pictures I need/download.jpg",
+        audio: "audio/04-Spring Yard Zone.mp3"
+    },
+    {
         title: "Boss",
         album: "Sonic the Hedgehog",
         cover: "Pictures I need/dr eggman.jpg",
@@ -30,6 +36,12 @@ const tracks = [
         album: "Sonic Adventure",
         cover: "Pictures I need/sonic-adventure-dx.jpg",
         audio: "audio/06 Open Your Heart (MAIN THEME OF SONIC Adventure).mp3"
+    },
+    {
+        title: "It Doesn't Matter(Theme of Sonic)",
+        album: "Sonic Adventure",
+        cover: "Pictures I need/sonic adventure-sonic.jpg",
+        audio: "audio/01 It Doesnt Matter (THEME OF SONIC).mp3"
     },
     {
         title: "Escape From the City",
@@ -106,6 +118,17 @@ function createPlaylist() {
         alert("Enter a unique name for the playlist.");
     }
 }
+
+// Function to delete a playlist
+function deletePlaylist(playlistName) {
+    if (confirm(`Are you sure you want to delete the playlist: ${playlistName}?`)) {
+        delete playlists[playlistName]; // Remove playlist from the playlists object
+        savePlaylists(); // Save updated playlists to localStorage
+        displayPlaylists(); // Refresh the playlist list in the DOM
+        alert(`Playlist '${playlistName}' has been deleted.`);
+    }
+}
+
 
 // Display all playlists in the #playlist-list
 function displayPlaylists() {
@@ -242,7 +265,6 @@ document.getElementById("sort-options").addEventListener("change", function () {
     displayTracks(sortedTracks);
 });
 
-
 //how to add an event listener for the search button
 
 // Event listener for the search button
@@ -255,4 +277,3 @@ document.getElementById("search-button").addEventListener("click", function () {
     );
     displayTracks(filteredTracks);
 });
-
