@@ -62,8 +62,6 @@ const tracks = [
     }
 ];
 
-
-
 let playlists = {}; // Stores playlists in the format { playlistName: [trackIds] }
 let currentPlaylistName = null; // Used to track the active playlist for adding/removing tracks
 
