@@ -62,6 +62,81 @@ const tracks = [
     }
 ];
 
+
+
+let playlists = {}; // Stores playlists in the format { playlistName: [trackIds] }
+let currentPlaylistName = null; // Used to track the active playlist for adding/removing tracks
+
+// Create a new playlist
+function createPlaylist() {
+    const playlistName = prompt("Enter a name for your playlist:");
+    if (playlistName) {
+        playlists[playlistName] = [];
+        currentPlaylistName = playlistName;
+        displayPlaylists();
+    }
+}
+
+// Add a track to the current playlist
+function addToPlaylist(trackId) {
+    if (!currentPlaylistName) {
+        alert("Please create a playlist first.");
+        return;
+    }
+    playlists[currentPlaylistName].push(trackId);
+    alert(`Track added to ${currentPlaylistName}`);
+}
+
+// Display all playlists
+function displayPlaylists() {
+    const playlistList = document.getElementById("playlist-list");
+    playlistList.innerHTML = ""; // Clear the list
+
+    for (const playlistName in playlists) {
+        const playlistDiv = document.createElement("div");
+        playlistDiv.className = "playlist";
+        playlistDiv.innerHTML = `
+            <strong>${playlistName}</strong>
+            <button onclick="editPlaylist('${playlistName}')">Edit</button>
+            <button onclick="deletePlaylist('${playlistName}')">Delete</button>
+        `;
+        playlistList.appendChild(playlistDiv);
+    }
+}
+
+// Edit a playlist (e.g., rename it or add/remove tracks)
+function editPlaylist(playlistName) {
+    currentPlaylistName = playlistName;
+    alert(`Editing playlist: ${playlistName}`);
+    // Additional editing logic can go here, e.g., removing tracks
+}
+
+// Delete a playlist
+function deletePlaylist(playlistName) {
+    if (confirm(`Are you sure you want to delete the playlist "${playlistName}"?`)) {
+        delete playlists[playlistName];
+        displayPlaylists();
+    }
+}
+
+// Save playlists to localStorage for persistence
+function savePlaylists() {
+    localStorage.setItem("playlists", JSON.stringify(playlists));
+}
+
+// Load playlists from localStorage
+function loadPlaylists() {
+    const savedPlaylists = localStorage.getItem("playlists");
+    if (savedPlaylists) {
+        playlists = JSON.parse(savedPlaylists);
+        displayPlaylists();
+    }
+}
+
+// Call loadPlaylists when the page loads
+window.onload = loadPlaylists;
+
+
 // Function to display tracks
 function displayTracks(tracksToDisplay) {
     const container = document.getElementById("track-container");
