@@ -23,12 +23,7 @@ const tracks = [
         cover: "Pictures I need/chemical_plant_zone.jpg",
         audio: "audio/509127_Chemical-Plant-Zone.mp3"
     },
-    {
-        title: "Marble Zone",
-        album: "Sonic the Hedgehog 2",
-        cover: "Pictures I need/marble_zone.jpg",
-        audio: "audio/03-Marble Zone.mp3"
-    },
+
     {
         title: "Open Your Heart",
         album: "Sonic Adventure",
