@@ -38,19 +38,25 @@ main{
 }
 
 .track-container{
-    display: grid;
+    display: flex;
     gap: 20px;
+    padding: 20px;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .track{
     background-color: aqua;
     border: 1px solid blue;
-    border-radius: 5px;
+    border-radius: 8px;
     margin: 0 auto;
     padding: 10px;
     width: 400px;
     text-align: center;
+    transition: transform 0.3s;
+}
+
+.track:hover{
+    transform: scale(1.05);
 }
 
 .thumbnail{

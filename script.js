@@ -6,6 +6,18 @@ const tracks = [
         audio: "audio/02-Green Hill Zone.mp3"
     },
     {
+        title: "Marble Zone",
+        album: "Sonic the Hedgehog",
+        cover: "Pictures I need/marble_zone.jpg",
+        audio: "audio/03-Marble Zone.mp3"
+    },
+    {
+        title: "Boss",
+        album: "Sonic the Hedgehog",
+        cover: "Pictures I need/dr eggman.jpg",
+        audio: "audio/08-Boss.mp3"
+    },
+    {
         title: "Chemical Plant Zone",
         album: "Sonic the Hedgehog 2",
         cover: "Pictures I need/chemical_plant_zone.jpg",
@@ -25,7 +37,7 @@ const tracks = [
     },
     {
         title: "Escape From the City",
-        album: "Sonic Adventure 2 Battle",
+        album: "Sonic Adventure 2",
         cover: "Pictures I need/city_esacape.jpg",
         audio: "audio/02.-Escape-From-The-City-.for-City-Escape.mp3"
     },
