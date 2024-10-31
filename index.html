@@ -9,7 +9,31 @@
 <body>
     <header>
         <h1>Sonic Sound Oasis</h1>
-        <input type="text" placeholder="Search for tracks..." id="searchBar">
+        <div id="controls">
+            <!--Here is my search bar-->
+            <input type="text" placeholder="Search for tracks..." id="search-bar">
+            
+            <select name="" id="category-filter">
+                <option value="">All Games</option>
+                <option value="Sonic the Hedgehog">Sonic the Hedgehog</option>
+                <option value="Sonic the Hedgehog 2">Sonic the Hedgehog 2</option>
+                <option value="Sonic Adventure">Sonic Adventure</option>
+                <option value="Sonic Adventure 2">Sonic Adventure 2</option>
+                <option value="Sonic CD">Sonic CD</option>
+                <option value="Sonic Heroes">Sonic Heroes</option>
+            </select>
+
+            <!--Here are my sorting options for the filter-->
+            <select name="" id="sort-options">
+                <option value="">Sort by</option>
+                <option value="alphabetical">Alphabetical Order</option>
+                <option value="releaseDate">Release Date</option>
+                <option value="popularity">Popularity</option>
+            </select>
+
+            <button id="search-button">Search</button>
+        </div>
+        
 
         <img src="Pictures I need/sonic the hedgehog.png" alt="Sonic the hedgehog">
     </header>

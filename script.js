@@ -55,41 +55,93 @@ const tracks = [
     }
 ];
 
-// Select the container where track elements will be added
-const container = document.getElementById("track-container");
+// Function to display tracks
+function displayTracks(tracksToDisplay) {
+    const container = document.getElementById("track-container");
+    container.innerHTML = ""; // Clear previous tracks
 
-// Loop through each track in the tracks array and create HTML elements
-tracks.forEach(track => {
-    // Create the main track div
-    const trackDiv = document.createElement("div");
-    trackDiv.classList.add("track");
+    tracksToDisplay.forEach(track => {
+        const trackDiv = document.createElement("div");
+        trackDiv.classList.add("track");
 
-    // Create and add the image element
-    const img = document.createElement("img");
-    img.src = track.cover;
-    img.alt = `${track.title} Album Art`;
-    img.classList.add("thumbnail");
-    trackDiv.appendChild(img);
+        const img = document.createElement("img");
+        img.src = track.cover;
+        img.alt = `${track.title} Album Art`;
+        img.classList.add("thumbnail");
+        trackDiv.appendChild(img);
 
-    // Create and add the title
-    const title = document.createElement("h3");
-    title.textContent = track.title;
-    trackDiv.appendChild(title);
+        const title = document.createElement("h3");
+        title.textContent = track.title;
+        trackDiv.appendChild(title);
 
-    // Create and add the album info
-    const album = document.createElement("p");
-    album.textContent = track.album;
-    trackDiv.appendChild(album);
+        const album = document.createElement("p");
+        album.textContent = track.album;
+        trackDiv.appendChild(album);
 
-    // Create and add the audio player
-    const audio = document.createElement("audio");
-    audio.controls = true;
-    const source = document.createElement("source");
-    source.src = track.audio;
-    source.type = "audio/mpeg";
-    audio.appendChild(source);
-    trackDiv.appendChild(audio);
+        const audio = document.createElement("audio");
+        audio.controls = true;
+        const source = document.createElement("source");
+        source.src = track.audio;
+        source.type = "audio/mpeg";
+        audio.appendChild(source);
+        trackDiv.appendChild(audio);
 
-    // Add the completed trackDiv to the container
-    container.appendChild(trackDiv);
+        container.appendChild(trackDiv);
+    });
+}
+
+// Display all tracks initially
+displayTracks(tracks);
+
+// Event listener for the search button
+document.getElementById("search-button").addEventListener("click", function () {
+    const searchTerm = document.getElementById("search-bar").value.toLowerCase();
+    const filteredTracks = tracks.filter(track =>
+        track.title.toLowerCase().includes(searchTerm) ||
+        track.album.toLowerCase().includes(searchTerm) ||
+        (track.composer && track.composer.toLowerCase().includes(searchTerm))
+    );
+    displayTracks(filteredTracks);
 });
+
+
+
+// Filter functionality
+document.getElementById("category-filter").addEventListener("change", function () {
+    const selectedCategory = this.value;
+    const filteredTracks = selectedCategory
+        ? tracks.filter(track => track.album === selectedCategory)
+        : tracks;
+    displayTracks(filteredTracks);
+});
+
+// Sort functionality
+document.getElementById("sort-options").addEventListener("change", function () {
+    const sortOption = this.value;
+    let sortedTracks = [...tracks]; // Create a copy to avoid mutating the original array
+
+    if (sortOption === "alphabetical") {
+        sortedTracks.sort((a, b) => a.title.localeCompare(b.title));
+    } else if (sortOption === "releaseDate") {
+        sortedTracks.sort((a, b) => a.releaseDate - b.releaseDate);
+    } else if (sortOption === "popularity") {
+        sortedTracks.sort((a, b) => b.popularity - a.popularity);
+    }
+
+    displayTracks(sortedTracks);
+});
+
+
+//how to add an event listener for the search button
+
+// Event listener for the search button
+document.getElementById("search-button").addEventListener("click", function () {
+    const searchTerm = document.getElementById("search-bar").value.toLowerCase();
+    const filteredTracks = tracks.filter(track =>
+        track.title.toLowerCase().includes(searchTerm) ||
+        track.album.toLowerCase().includes(searchTerm) ||
+        (track.composer && track.composer.toLowerCase().includes(searchTerm))
+    );
+    displayTracks(filteredTracks);
+});
+
