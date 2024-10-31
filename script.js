@@ -1,3 +1,4 @@
+
 const tracks = [
     {
         title: "Green Hill Zone",
@@ -62,77 +63,109 @@ const tracks = [
     }
 ];
 
-let playlists = {}; // Stores playlists in the format { playlistName: [trackIds] }
-let currentPlaylistName = null; // Used to track the active playlist for adding/removing tracks
+let playlistTracks = [
+    { id: 1, title: "Spring Yard Zone", album: "Sonic the Hedgehog", game: "Sonic the Hedgehog" },
+    { id: 2, title: "It Doesn't Matter (Sonic Theme)", album: "Sonic Adventure", game: "Sonic Adventure" }
+    // Add more tracks as needed...
+];
+
+let playlists = {}; // Store playlists as an object, e.g., { playlistName: [trackIds] }
+let currentPlaylistName = null; // Holds the name of the currently selected playlist for adding tracks
+
+// Load saved playlists from localStorage on page load
+window.onload = function() {
+    loadPlaylists();
+    displayLibrary();
+    displayPlaylists();
+};
+
+function displayLibrary(){
+    const trackLibrary = document.getElementById('track-library');
+    trackLibrary.innerHTML = "";
+
+    tracks.forEach(track => {
+        const trackDiv = document.createElement("div");
+        trackDiv.classList.add("track");
+        trackDiv.innerHTML = `<p><strong>${track.title}</strong> - ${track.album}</p>
+        <button> onclick="addToCurrentPlaylist(${track.id})">Add to Playlist</button>
+        `;
+        trackLibrary.appendChild(trackDiv);
+    })
+}
 
 // Create a new playlist
 function createPlaylist() {
-    const playlistName = prompt("Enter a name for your playlist:");
-    if (playlistName) {
+    const playlistName = document.getElementById("playlist-name").value.trim();
+    if (playlistName && !playlists[playlistName]) {
         playlists[playlistName] = [];
         currentPlaylistName = playlistName;
+        savePlaylists();
         displayPlaylists();
+        alert(`Playlist '${playlistName}' created!`);
+    } else {
+        alert("Enter a unique name for the playlist.");
     }
+}
+
+// Display all playlists in the #playlist-list
+function displayPlaylists() {
+    const playlistList = document.getElementById("playlist-list");
+    playlistList.innerHTML = ""; // Clear current list
+
+    for (const [playlistName, trackIds] of Object.entries(playlists)) {
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <span>${playlistName} (${trackIds.length} tracks)</span>
+            <button onclick="viewPlaylist('${playlistName}')">View</button>
+            <button onclick="deletePlaylist('${playlistName}')">Delete</button>
+        `;
+        playlistList.appendChild(li);
+    }
+}
+
+// View the tracks in a selected playlist
+function viewPlaylist(playlistName) {
+    currentPlaylistName = playlistName;
+    const trackIds = playlists[playlistName];
+
+    // Get full track details for each ID
+    const trackTitles = trackIds.map(id => {
+        const track = tracks.find(t => t.id === id);
+        return track ? `${track.title} - ${track.album}` : null;
+    }).filter(Boolean);
+
+    alert(`Playlist: ${playlistName}\nTracks:\n${trackTitles.join("\n")}`);
 }
 
 // Add a track to the current playlist
-function addToPlaylist(trackId) {
+function addToCurrentPlaylist(trackId) {
     if (!currentPlaylistName) {
-        alert("Please create a playlist first.");
+        alert("Select or create a playlist first.");
         return;
     }
-    playlists[currentPlaylistName].push(trackId);
-    alert(`Track added to ${currentPlaylistName}`);
-}
 
-// Display all playlists
-function displayPlaylists() {
-    const playlistList = document.getElementById("playlist-list");
-    playlistList.innerHTML = ""; // Clear the list
-
-    for (const playlistName in playlists) {
-        const playlistDiv = document.createElement("div");
-        playlistDiv.className = "playlist";
-        playlistDiv.innerHTML = `
-            <strong>${playlistName}</strong>
-            <button onclick="editPlaylist('${playlistName}')">Edit</button>
-            <button onclick="deletePlaylist('${playlistName}')">Delete</button>
-        `;
-        playlistList.appendChild(playlistDiv);
+    // Ensure track isn't already in the playlist
+    if (!playlists[currentPlaylistName].includes(trackId)) {
+        playlists[currentPlaylistName].push(trackId);
+        savePlaylists();
+        alert(`Track added to "${currentPlaylistName}"`);
+    } else {
+        alert("Track already in the playlist.");
     }
 }
 
-// Edit a playlist (e.g., rename it or add/remove tracks)
-function editPlaylist(playlistName) {
-    currentPlaylistName = playlistName;
-    alert(`Editing playlist: ${playlistName}`);
-    // Additional editing logic can go here, e.g., removing tracks
-}
-
-// Delete a playlist
-function deletePlaylist(playlistName) {
-    if (confirm(`Are you sure you want to delete the playlist "${playlistName}"?`)) {
-        delete playlists[playlistName];
-        displayPlaylists();
-    }
-}
-
-// Save playlists to localStorage for persistence
+// Save playlists to localStorage
 function savePlaylists() {
     localStorage.setItem("playlists", JSON.stringify(playlists));
 }
 
 // Load playlists from localStorage
 function loadPlaylists() {
-    const savedPlaylists = localStorage.getItem("playlists");
+    const savedPlaylists = JSON.parse(localStorage.getItem("playlists"));
     if (savedPlaylists) {
-        playlists = JSON.parse(savedPlaylists);
-        displayPlaylists();
+        playlists = savedPlaylists;
     }
 }
-
-// Call loadPlaylists when the page loads
-window.onload = loadPlaylists;
 
 
 // Function to display tracks
@@ -183,8 +216,6 @@ document.getElementById("search-button").addEventListener("click", function () {
     );
     displayTracks(filteredTracks);
 });
-
-
 
 // Filter functionality
 document.getElementById("category-filter").addEventListener("change", function () {

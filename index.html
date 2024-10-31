@@ -38,16 +38,29 @@
         <img src="Pictures I need/sonic the hedgehog.png" alt="Sonic the hedgehog">
     </header>
     <main>
-        <div id="track-container">
+        <div id="library-container">
             <div id="track"></div>
             <!--new placement for my tracks-->
         </div>
-        <div id="playlist-controls">
-            <button onclick="createPlaylist()">Create a new Playlist</button>
-            <div id="playlist-list">
-                <!--Display playlist here-->
+        <div id="playlist-form">
+            <h3>Create Your Own Sonic Playlist Here:</h3>
+            <input type="text" id="playlist-name" placeholder="Playlist Name" required>
+            <button onclick="createPlaylist()"> Create Playlist</button>
+        </div>
+        <div id="playlist-container">
+            <h3>Your Sonic Playlists</h3>
+            <ul id="playlist-list"></ul>
+        </div>
+        <div id="track-container">
+            <!--Each track should have a button to add to the current playlist-->
+            <!--Track Entry-->
+            <div class="track" data-id="1">
+                <p class="track-title">Track Title</p>
+                <button onclick="addToCurrentPlaylist(1)">Add To Playlist</button>
             </div>
         </div>
+        <div id="track-library"></div>
+        </div>   
     </main>
     <footer>
         <p>&copy; 2024 Sonic Sound Oasis</p>
