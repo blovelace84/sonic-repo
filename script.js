@@ -75,6 +75,44 @@ const tracks = [
     }
 ];
 
+// Theme Toggle Button and Theme Selector Elements
+const themeToggle = document.getElementById("themeToggle");
+const themeSelect = document.getElementById("themeSelect");
+
+// Load Saved Theme from Local Storage
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme") || "default";
+    applyTheme(savedTheme);
+    themeSelect.value = savedTheme;
+});
+
+// Toggle Dark Mode
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "default");
+});
+
+// Apply Selected Theme
+themeSelect.addEventListener("change", (e) => {
+    const selectedTheme = e.target.value;
+    applyTheme(selectedTheme);
+    localStorage.setItem("theme", selectedTheme);
+});
+
+// Function to Apply the Theme
+function applyTheme(theme) {
+    // Remove any previous theme classes
+    document.body.classList.remove("green-hill", "chemical-plant", "sky-sanctuary", "dark-mode");
+    
+    // Apply the selected theme
+    if (theme === "dark") {
+        document.body.classList.add("dark-mode");
+    } else if (theme === "green-hill" || theme === "chemical-plant" || theme === "sky-sanctuary") {
+        document.body.classList.add(theme);
+    }
+}
+
+
 // Function to display tracks
 function displayTracks(tracksToDisplay) {
     const container = document.getElementById("track-container");

@@ -1,9 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     font-family: Arial, Helvetica, sans-serif;
     max-width: 1200px;
     background-color: #19199c;
+    transition: background-color 0.3s ease, color 0.3s ease;
     margin: 0 auto;
     padding: 10px;
+}
+
+.theme-toggle, .theme-selector{
+    margin: 1rem;
+    text-align: center;
+}
+
+body.dark-mode{
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+body.green-hill{
+    background-image: url('Pictures I need/green_hill_zone.jpg');
+    background-size: cover;
+    color: #fff;
+}
+
+body.chemical-plant{
+    background-image: url('Pictures I need/chemical_plant_zone.jpg');
+    background-size: cover;
+    color: #fff;
+}
+
+body.sky-sanctuary{
+    background-image: url('Pictures I need/download (1).jpg');
+    background-size: cover;
+    color: #000;
 }
 
 header{
