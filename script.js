@@ -3,7 +3,7 @@ const tracks = [
     {
         title: "Green Hill Zone",
         album: "Sonic the Hedgehog",
-        cover: "Pictures I need/green_hill_zone.jpg",
+        cover: "Pictures I need/new_green_hill_zone.webp",
         audio: "audio/02-Green Hill Zone.mp3"
     },
     {
